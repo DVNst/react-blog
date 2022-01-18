@@ -1,27 +1,35 @@
 @import '../variables';
 
 .blog {
+    margin: 0;
+    padding: 0;
+
     &__list {
       margin: 0;
       padding: 0;
       list-style-type: none;
+      border-bottom: solid 1px #f9f9f9;
     }
   
     &__item {
       display: flex;
+      position: relative;
       margin: 0;
-      padding: 21px 30px 26px;
-      border-left: 4px solid transparent;
+      padding: 27px 30px;
+      border-top: solid 1px #f9f9f9;
   
       background: $color-white;
       &:hover {
-        border-left-color: $color-accent;
-  
+        box-shadow: inset 4px 0px 0px 0px $color-accent;
         background: rgba(138, 164, 183, 0.04);
       }
     }
   
     &__title {
+      margin: 0;
+      margin-bottom: 2px;
+      padding: 0;
+
       font-family: "Nunito", sans-serif;
       font-style: normal;
       font-weight: 800;
@@ -30,7 +38,11 @@
     }
   
     &__text {
-      height: 5em;
+      margin: 0;
+      margin-bottom: 19px;
+      padding: 0;
+
+      height: 72px;
       overflow: hidden;
       text-overflow: ellipsis;
   
@@ -45,8 +57,21 @@
       line-height: 24px;
       color: $color-text-second;
     }
+
+    &__img {
+      margin: 0;
+      margin-left: 40px;
+      width: 165px;
+      height: 165px;
+
+      border-radius: 15px;
+    }
   
     &__data {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      
       font-family: "IBM Plex Sans", sans-serif;
       font-style: normal;
       font-weight: normal;
@@ -58,10 +83,78 @@
     }
   
     &__date {
+      margin: 0;
+      margin-right: 21px;
+      padding: 0;
+
       color: $color-text-minor;
     }
   
     &__views {
+      margin: 0;
+      padding: 0;
+      padding-left: 22px;
+      position: relative;
+
+      color: $color-text-minor;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 17px;
+        height: 18px;
+        left: 0;
+
+        background-image: url('../../../public/img/icon-eye.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+
+    &__paginator {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 39px 30px;
+      justify-content: space-between;
+    }
+
+    &__nav-btn {
+      display: inline-block;
+      margin-right: 9px;
+      width: 77px;
+      height: 50px;
+
+      border-radius: 3px;
+      background-color: $color-btn;
+      background-image: url('../../../public/img/icon-arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+
+      :hover {
+        background-color: darken($color-btn, 30%);
+      }
+
+      &--back {
+        transform: rotate(180deg);
+      }
+
+      &--disabled {
+        opacity: .3;
+      }
+    }
+
+    &__nav-info {
+      margin: 0;
+      padding: 0;
+
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+
       color: $color-text-minor;
     }
   }

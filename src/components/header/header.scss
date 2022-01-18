@@ -2,9 +2,19 @@
 
 .header {
   display: flex;
-  padding: 21px 30px 26px;
+  padding: 22px 30px;
 
   justify-content: space-between;
+
+  &__title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: $color-name-blog;
+  }
 }
 
 .header-menu {
@@ -20,6 +30,7 @@
     margin: 0 27px 0 0;
     padding: 0;
     position: relative;
+    z-index: 100;
 
     width: 20px;
     height: 20px;
