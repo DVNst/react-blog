@@ -1,0 +1,13 @@
+@import "../variables";
+
+.about {
+  position: sticky;
+  margin: 60px;
+  // width: 50%;
+  top: 60px;
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+}

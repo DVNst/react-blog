@@ -1,0 +1,67 @@
+@import '../variables';
+
+.blog {
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+  
+    &__item {
+      display: flex;
+      margin: 0;
+      padding: 21px 30px 26px;
+      border-left: 4px solid transparent;
+  
+      background: $color-white;
+      &:hover {
+        border-left-color: $color-accent;
+  
+        background: rgba(138, 164, 183, 0.04);
+      }
+    }
+  
+    &__title {
+      font-family: "Nunito", sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 30px;
+    }
+  
+    &__text {
+      height: 5em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+  
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 24px;
+      color: $color-text-second;
+    }
+  
+    &__data {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      font-feature-settings: "tnum" on, "lnum" on;
+    }
+  
+    &__date {
+      color: $color-text-minor;
+    }
+  
+    &__views {
+      color: $color-text-minor;
+    }
+  }
