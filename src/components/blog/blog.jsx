@@ -45,17 +45,17 @@ import "./blog.scss";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    axios
-      .get("http://localhost:5656/posts?orderBy=desc")
-      .then((res) => {
-        console.log(res);
-        setPosts(res.data.items);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5656/posts?orderBy=desc")
+  //     .then((res) => {
+  //       console.log(res);
+  //       setPosts(res.data.items);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   const formatDate = (date) => {
     var options = {

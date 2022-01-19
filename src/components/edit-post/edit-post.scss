@@ -1,0 +1,127 @@
+@import "../variables";
+
+.editor {
+  padding: 0;
+  margin: 70px 60px 60px;
+}
+
+form .editor {
+  &__form {
+    width: 100%;
+  }
+
+  &__label {
+    display: block;
+    margin: 0 0 7px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    width: 100%;
+
+    border: none;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 52px;
+    color: $color-text;
+
+    &::placeholder {
+      font: inherit;
+      color: $color-text-minor;
+    }
+  }
+
+  &__desc {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  &__label-wrap {
+    width: 100%;
+    height: 46px;
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+  }
+
+  &__file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+
+    &:disabled ~ .editor__file-name {
+      color: $color-form-disabled;
+      background-color: $color-form-disabled-bg;
+    }
+
+    &:disabled ~ .editor__btn--file {
+      color: $color-btn-disabled;
+      background-color: $color-btn-disabled-bg;
+      &::before {
+        background-image: none;
+      }
+    }
+  }
+
+  &__file-name {
+    display: block;
+    padding: 10px;
+    margin: 0;
+    margin-right: 15px;
+
+    flex-grow: 2;
+    overflow: hidden;
+    border: 1px solid $color-form-border;
+    border-radius: 10px;
+    color: $color-text-second;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: $color-form-bg;
+  }
+
+  &__text {
+    margin-bottom: 25px;
+  }
+
+  &__btn {
+    &--file {
+      position: relative;
+      padding-left: 48px;
+      flex-grow: 0;
+
+      background-color: $color-btn-file-bg;
+      color: $color-btn-file;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+
+        position: absolute;
+        left: 23px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        background-image: url("../../../public/img/icon-loading.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+    &--submit {
+      display: block;
+      margin-left: auto;
+    }
+  }
+}
