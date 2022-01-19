@@ -55,10 +55,14 @@ code {
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: $color-btn-submit;
-  background-color: $color-btn-submit-bg;
+  color: $color-btn;
+  background-color: $color-btn-bg;
   border: none;
   border-radius: 12px;
+
+  &:hover {
+    background-color: darken($color-btn-bg, 10%);
+  }
 }
 
 label {

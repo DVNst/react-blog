@@ -127,13 +127,14 @@
       height: 50px;
 
       border-radius: 3px;
-      background-color: $color-btn;
+      background-color: $color-btn-bg;
+      color: $color-btn;
       background-image: url('../../../public/img/icon-arrow.svg');
       background-repeat: no-repeat;
       background-position: center;
 
-      :hover {
-        background-color: darken($color-btn, 30%);
+      &:hover {
+        background-color: darken($color-btn-bg, 10%);
       }
 
       &--back {
@@ -142,6 +143,10 @@
 
       &--disabled {
         opacity: .3;
+
+        &:hover {
+          background-color: $color-btn-bg;
+        }
       }
     }
 
