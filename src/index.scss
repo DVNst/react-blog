@@ -30,17 +30,24 @@ code {
   // max-width: 1440px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 50% 1fr auto;
-  grid-template-areas: "mainLeft mainRight menu";
+  grid-template-columns: 1fr auto;
+  // grid-template-areas: "mainRight menu";
+
+  &--two-columns {
+    grid-template-columns: 50% 1fr auto;
+    // grid-template-areas: "mainLeft mainRight menu";
+  }
 
   &__left {
     position: relative;
-    grid-area: mainLeft;
+    order: 1;
+    // grid-area: mainLeft;
     // padding: 60px;
   }
 
   &__right {
-    grid-area: mainRight;
+    // grid-area: mainRight;
+    order: 2;
     border-left: solid 1px #f9f9f9;
   }
 }

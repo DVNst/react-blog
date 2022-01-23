@@ -8,21 +8,32 @@
       margin: 0;
       padding: 0;
       list-style-type: none;
-      border-bottom: solid 1px #f9f9f9;
+      border-bottom: solid 1px $color-border
     }
   
     &__item {
-      display: flex;
-      position: relative;
       margin: 0;
       padding: 27px 30px;
-      border-top: solid 1px #f9f9f9;
+      border-top: solid 1px $color-border;
   
       background: $color-white;
+      color: $color-text;
+      
       &:hover {
         box-shadow: inset 4px 0px 0px 0px $color-accent;
         background: rgba(138, 164, 183, 0.04);
       }
+    }
+
+    &__link {
+      display: flex;
+      margin: 0;
+      padding: 0;
+
+      position: relative;
+
+      text-decoration: none;
+      color: inherit;
     }
   
     &__title {
@@ -80,14 +91,13 @@
       letter-spacing: 0.01em;
       text-transform: uppercase;
       font-feature-settings: "tnum" on, "lnum" on;
+      color: $color-text-minor;
     }
   
     &__date {
       margin: 0;
       margin-right: 21px;
       padding: 0;
-
-      color: $color-text-minor;
     }
   
     &__views {
@@ -95,8 +105,6 @@
       padding: 0;
       padding-left: 22px;
       position: relative;
-
-      color: $color-text-minor;
 
       &::before {
         content: '';

@@ -47,7 +47,8 @@ const EditPost = (post) => {
   }, []);
 
   return (
-    <div className="editor">
+    <section className="editor">
+      <h2 className="visually-hidden">Редактор статьи</h2>
       <form
         className="editor__form"
         encType="multipart/form-data"
@@ -130,7 +131,7 @@ const EditPost = (post) => {
           />
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 

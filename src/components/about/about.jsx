@@ -2,12 +2,12 @@ import './about.scss'
 
 const About = () => {
   return (
-    <div className="about">
+    <section className="about">
       <div className="about__header">
-        <h1 className="about__name">
+        <h2 className="about__name">
           Vasya Pupkin
           <span className="about__desc">Блог фронтенд-разработчика</span>
-        </h1>
+        </h2>
         <img
           className="about__img"
           src="./img/vasya-pupkin.jpg"
@@ -27,7 +27,7 @@ const About = () => {
         laoreet amet, laoreet proin. Duis mi, aliquam tincidunt amet
         phasellus malesuada non nisi.
       </p>
-    </div>
+    </section>
   );
 };
 

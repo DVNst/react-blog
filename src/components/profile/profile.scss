@@ -1,0 +1,77 @@
+@import "../variables";
+
+.profile {
+  margin: 0 auto;
+  padding: 100px 60px 60px;
+  max-width: 560px;
+  box-sizing: content-box;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 58px;
+    color: $color-text-profile;
+  }
+
+  &__info {
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  &__info-date {
+    font-weight: bold;
+  }
+
+  &__publications {
+    margin: 0;
+    padding-top: 30px;
+    border-top: 1px solid $color-form-border;
+  }
+
+  &__tabs {
+    margin-bottom: 15px;
+  }
+
+  &__tab {
+    margin: 0;
+    padding: 16px 10px;
+    border: none;
+    border-radius: 4px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: $color-tab;
+    background-color: $color-tab-bg;
+    
+    cursor: pointer;
+
+    &:hover {
+      color: $color-tab-active;
+      background-color: rgba($color-tab-active-bg, 0.2);
+    }
+
+    &--active {
+      color: $color-tab-active;
+      background-color: rgba($color-tab-active-bg, 0.08);
+
+      &:hover {
+        background-color: rgba($color-tab-active-bg, 0.08);
+      }
+    }
+  }
+}
