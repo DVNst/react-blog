@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Comments from "../comments/comments";
 
@@ -6,7 +6,7 @@ import { formatDate } from "../../utils";
 
 import "./post.scss";
 
-const post = {
+const postTest = {
   _id: "61ca0e10d06b1ed9a357aaa8",
   title: "JavaScript: Как с помощью Dadata определить город по IP?",
   text: "На работе потребовалось запилить задачу для автоматического определения города при совершении заказа. Было решено сделать это на фронте, ибо бек был занят.",
@@ -26,7 +26,7 @@ const post = {
   __v: 0,
 };
 
-const Post = () => {
+const Post = ({ post = postTest }) => {
   const initialValue = {
     text: "",
     user: post.user,
@@ -57,7 +57,7 @@ const Post = () => {
   };
 
   return (
-    <section className="post">
+    <article className="post">
       <header className="post__header">
         <h2 className="post__name">Какой-то очень интересный заголовок</h2>
         <div className="post__data">
@@ -128,7 +128,7 @@ const Post = () => {
           </form>
         </div>
       </div>
-    </section>
+    </article>
   );
 };
 
