@@ -89,6 +89,10 @@ const Comments = ({ post_id, user_id, simplified = false }) => {
     if (user_id) {
       setcomments(commentsTest.filter((comment) => comment.user._id === user_id));
     };
+
+    if (post_id) {
+      setcomments(commentsTest.filter((comment) => comment.post._id === post_id));
+    };
   }, []);
 
   const formatDate = (date) => {

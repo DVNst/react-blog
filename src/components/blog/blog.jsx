@@ -82,7 +82,6 @@ const Blog = () => {
                   <p className="blog__text">{post.text}</p>
 
                   <div className="blog__data">
-                    {/* <p className="blog__date">12 августа 2019 в 08:06</p> */}
                     <p className="blog__date">{formatDate(post.createdAt)}</p>
                     <p className="blog__views">{post.views}</p>
                   </div>

@@ -16,7 +16,7 @@ const About = () => {
           alt="Vasya Pupkin"
         />
       </div>
-      <h2 className="about__title">Обо мне</h2>
+      <h3 className="about__title">Обо мне</h3>
       <p className="about__desc">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
         scelerisque diam arcu risus. Imperdiet dolor, porttitor pellentesque
