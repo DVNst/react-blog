@@ -3,6 +3,8 @@ import axios from "axios";
 
 import "./blog.scss";
 
+import { formatDate } from "../../utils";
+
 let postsTest = [
   {
     _id: "61ca0e10d06b1ed9a357aaa8",
@@ -56,18 +58,6 @@ const Blog = () => {
   //       console.log(error);
   //     });
   // }, []);
-
-  const formatDate = (date) => {
-    var options = {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    };
-
-    return new Date(date).toLocaleString("ru", options).replace("г.,", "в");
-  };
 
   return (
     <section className="blog">

@@ -3,6 +3,8 @@ import axios from "axios";
 
 import "./comments.scss";
 
+import { formatDate } from "../../utils";
+
 let commentsTest = [
   {
     _id: "11",
@@ -94,18 +96,6 @@ const Comments = ({ post_id, user_id, simplified = false }) => {
       setcomments(commentsTest.filter((comment) => comment.post._id === post_id));
     };
   }, []);
-
-  const formatDate = (date) => {
-    var options = {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    };
-
-    return new Date(date).toLocaleString("ru", options).replace("г.,", "в");
-  };
 
   return (
     <div className="comments">

@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import Comments from "../comments/comments";
 
+import { formatDate } from "../../utils";
+
 import "./post.scss";
 
 const post = {
@@ -33,18 +35,6 @@ const Post = () => {
 
   const [newComment, setNewComment] = useState(initialValue);
 
-  const formatDate = (date) => {
-    var options = {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    };
-
-    return new Date(date).toLocaleString("ru", options).replace("г.,", "в");
-  };
-
   const onChange = (e) => {
     setNewComment((prev) => ({ ...prev, text: e.target.value }));
   };
@@ -58,7 +48,10 @@ const Post = () => {
         createdAt: new Date(Date.now()).toISOString(),
       });
     } else {
-      console.log("SUBMIT Click", { ...newComment, createdAt: new Date(Date.now()).toISOString() });
+      console.log("SUBMIT Click", {
+        ...newComment,
+        createdAt: new Date(Date.now()).toISOString(),
+      });
     }
     setNewComment(initialValue);
   };
