@@ -97,7 +97,7 @@ const EditPost = (post) => {
             disabled
             type="text"
           ></input>
-          <label className="btn editor__btn editor__btn--file" htmlFor="file">
+          <label className="btn btn--green editor__btn editor__btn--file" htmlFor="file">
             Загрузить
           </label>
         </div>
@@ -124,7 +124,7 @@ const EditPost = (post) => {
             />
           )}
           <input
-            className="btn editor__btn editor__btn--submit"
+            className="btn btn--yellow editor__btn editor__btn--submit"
             type="submit"
             onClick={handleSubmit}
             value="Опубликовать"

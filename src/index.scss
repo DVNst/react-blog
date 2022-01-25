@@ -23,7 +23,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .main {
@@ -55,7 +56,7 @@ code {
 .btn {
   display: inline-block;
   padding: 13px 23px;
-  
+
   font-family: Inter;
   font-style: normal;
   font-weight: 600;
@@ -69,6 +70,24 @@ code {
 
   &:hover {
     background-color: darken($color-btn-bg, 10%);
+  }
+
+  &--yellow {
+    background-color: $color-btn-submit-bg;
+    color: $color-btn-submit;
+
+    &:hover {
+      background-color: darken($color-btn-submit-bg, 10%);
+    }
+  }
+
+  &--green {
+    background-color: $color-btn-file-bg;
+    color: $color-btn-file;
+
+    &:hover {
+      background-color: darken($color-btn-file-bg, 10%);
+    }
   }
 }
 
@@ -84,9 +103,9 @@ label {
   color: $color-form;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 10px;
   border: 1px solid $color-form-border;
   border-radius: 10px;
 }
-

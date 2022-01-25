@@ -103,13 +103,6 @@ form .editor {
       margin-bottom: 30px;
       flex-grow: 0;
 
-      background-color: $color-btn-file-bg;
-      color: $color-btn-file;
-
-      &:hover {
-        background-color: darken($color-btn-file-bg, 10%);
-      }
-
       &::before {
         content: "";
         display: block;
@@ -130,13 +123,6 @@ form .editor {
 
     &--submit {
       margin-left: auto;
-
-      background-color: $color-btn-submit-bg;
-      color: $color-btn-submit;
-
-      &:hover {
-        background-color: darken($color-btn-submit-bg, 10%);
-      }
     }
   }
 }

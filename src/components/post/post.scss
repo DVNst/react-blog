@@ -172,7 +172,22 @@
 }
 
 .add-comment {
-  &__title {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 
+  &__label {
+    display: inline-block;
+    margin-bottom: 7px;
+  }
+
+  &__text {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    margin-left: auto;
   }
 }

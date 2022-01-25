@@ -1,6 +1,8 @@
-import Comments from '../comments/comments';
+import { useState } from "react";
 
-import './post.scss'
+import Comments from "../comments/comments";
+
+import "./post.scss";
 
 const post = {
   _id: "61ca0e10d06b1ed9a357aaa8",
@@ -20,9 +22,17 @@ const post = {
   createdAt: "2021-12-27T08:06:44.876Z",
   updatedAt: "2021-12-27T08:06:59.093Z",
   __v: 0,
-}
+};
 
 const Post = () => {
+  const initialValue = {
+    text: "",
+    user: post.user,
+    post: { id: post._id },
+  };
+
+  const [newComment, setNewComment] = useState(initialValue);
+
   const formatDate = (date) => {
     var options = {
       day: "numeric",
@@ -35,6 +45,24 @@ const Post = () => {
     return new Date(date).toLocaleString("ru", options).replace("г.,", "в");
   };
 
+  const onChange = (e) => {
+    setNewComment((prev) => ({ ...prev, text: e.target.value }));
+  };
+
+  const handleNewComment = (e) => {
+    e.preventDefault();
+
+    if (newComment) {
+      console.log("SUBMIT NEW COMMENT", {
+        ...newComment,
+        createdAt: new Date(Date.now()).toISOString(),
+      });
+    } else {
+      console.log("SUBMIT Click", { ...newComment, createdAt: new Date(Date.now()).toISOString() });
+    }
+    setNewComment(initialValue);
+  };
+
   return (
     <section className="post">
       <header className="post__header">
@@ -43,7 +71,10 @@ const Post = () => {
           <p className="post__date">{formatDate(post.createdAt)}</p>
           <p className="post__views">{post.views}</p>
         </div>
-        <p className="post__desc">Я часто замечаю, что начинающие фронтенд-разработчики по несколько раз то начинают, то забрасывают изучение технологий.</p>
+        <p className="post__desc">
+          Я часто замечаю, что начинающие фронтенд-разработчики по несколько раз
+          то начинают, то забрасывают изучение технологий.
+        </p>
         {/* <img
           className="about__img"
           src="./img/vasya-pupkin.jpg"
@@ -54,20 +85,53 @@ const Post = () => {
       </header>
       <div className="post__main">
         <div className="post__content">
-          <p className="post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque diam arcu risus. Imperdiet dolor, porttitor pellentesque fringilla aliquet sit. Turpis arcu vitae quis nunc suscipit. Mattis <a className="post__link" href=''>scelerisque leo</a> curabitur faucibus. Nec, sed porta ac enim. Mattis quam accumsan ipsum commodo sed purus mi. Platea sit lectus neque, nulla sapien vitae nulla. Nisl viverra viverra quis mattis tincidunt laoreet amet, laoreet proin. Duis mi, aliquam tincidunt amet phasellus malesuada non nisi.</p>
+          <p className="post__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+            scelerisque diam arcu risus. Imperdiet dolor, porttitor pellentesque
+            fringilla aliquet sit. Turpis arcu vitae quis nunc suscipit. Mattis{" "}
+            <a className="post__link" href="">
+              scelerisque leo
+            </a>{" "}
+            curabitur faucibus. Nec, sed porta ac enim. Mattis quam accumsan
+            ipsum commodo sed purus mi. Platea sit lectus neque, nulla sapien
+            vitae nulla. Nisl viverra viverra quis mattis tincidunt laoreet
+            amet, laoreet proin. Duis mi, aliquam tincidunt amet phasellus
+            malesuada non nisi.
+          </p>
           <h1 className="post__title post__title--h1">Заголовок H1</h1>
           <h2 className="post__title post__title--h2">Заголовок H3</h2>
           <h3 className="post__title post__title--h3">Заголовок H4</h3>
           <h4 className="post__title post__title--h4">Заголовок H2</h4>
           <h5 className="post__title post__title--h5">Заголовок H5</h5>
-          <blockquote className='post__blockquote'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque diam arcu risus. Imperdiet dolor, porttitor pellentesque fringilla aliquet sit. Turpis arcu vitae quis nunc suscipit. Mattis scelerisque leo curabitur</blockquote>
+          <blockquote className="post__blockquote">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+            scelerisque diam arcu risus. Imperdiet dolor, porttitor pellentesque
+            fringilla aliquet sit. Turpis arcu vitae quis nunc suscipit. Mattis
+            scelerisque leo curabitur
+          </blockquote>
         </div>
         <div className="post__comments">
           <Comments post_id={post._id} />
-          <form className="post__add-comment">
-            <label htmlFor="newcomment">Добавить коментарий</label>
-            <textarea name="newcomment" id="newcomment" cols="30" rows="10"></textarea>
-            <input type="submit" value="Отправить"></input>
+
+          <form className="post__add-comment add-comment">
+            <label className="add-comment__label" htmlFor="newcomment">
+              Добавить коментарий
+            </label>
+            <textarea
+              className="add-comment__text"
+              value={newComment.text}
+              onChange={onChange}
+              name="newcomment"
+              id="newcomment"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <input
+              className="btn btn--yellow add-comment__btn"
+              type="submit"
+              onClick={handleNewComment}
+              value="Отправить"
+            ></input>
           </form>
         </div>
       </div>
