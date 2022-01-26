@@ -1,8 +1,18 @@
+import { useState } from "react";
+
 import "./menu.scss";
 
 const Menu = (posts) => {
+  const [menuOpen, setMenuOpen] = useState(true);
+
+  const handleMenu = (e) => {
+    e.preventDefault();
+
+    console.log(e.target);
+  }
+
   return (
-    <div className="main__menu menu">
+    <div className={`main__menu menu${menuOpen ? ' menu--open' : ''}`}>
       <div className="menu__wrapper">
         <p className="menu__title">Вася Пупкин</p>
         <p className="menu__desc">Дата регистрации: 12 августа 2019 в 08:06</p>
@@ -15,9 +25,12 @@ const Menu = (posts) => {
           </ul>
         </nav>
       </div>
-      <div className="menu__btn">
+      <button
+        className="menu__btn"
+        onClick={handleMenu}
+      >
         <span className="menu__btn-text">Меню</span>
-      </div>
+      </button>
     </div>
   );
 };
