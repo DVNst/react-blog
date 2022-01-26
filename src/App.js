@@ -12,12 +12,14 @@ function App() {
   return (
     <div className="main main--two-columns">
     {/* <div className="main"> */}
-      <Menu />
+      <Menu 
+        menuOpen
+      />
       <div className="main__left">
-        {/* <About /> */}
-        {/* <EditPost /> */}
+        {/* <About />
+        <EditPost />
+        <PostLoad /> */}
         <Post/>
-        {/* <PostLoad /> */}
       </div>
       <div className="main__right">
         <Header />

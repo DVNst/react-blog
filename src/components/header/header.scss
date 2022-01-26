@@ -2,6 +2,7 @@
 
 .header {
   display: flex;
+  position: relative;
   padding: 22px 30px;
 
   justify-content: space-between;
@@ -23,6 +24,56 @@
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+  }
+
+  &__search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background-color: $color-search-bg;
+  }
+}
+
+.search {
+  &__input {
+    position: absolute;
+    padding: 20px 78px 20px 30px;
+    width: 100%;
+    height: 100%;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: $color-search-bg;
+    border-radius: 0;
+
+    &::placeholder {
+      color: #798FA8;
+    }
+  }
+
+  &__btn {
+    width: 16px;
+    height: 16px;
+
+    position: absolute;
+    top: 50%;
+    right: 32px;
+    transform: translateY(-50%);
+
+    background-color: transparent;
+    border: none;
+    background-image: url(../../../public/img/icon-closed.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    transition: transform 200ms ease-out 100ms;
   }
 }
 
@@ -47,6 +98,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    cursor: pointer;
 
     &--search {
       background-image: url(../../../public/img/icon-search.svg);
