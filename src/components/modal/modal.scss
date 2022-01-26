@@ -1,0 +1,144 @@
+@import "../variables";
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 100;
+  color: $color-text;
+
+  background-color: rgba(#000000, 0.3);
+
+  &__window {
+    display: block;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    background-color: $color-form-bg;
+  }
+
+  &__form {
+    margin: 0;
+  }
+
+  &--invisible {
+    display: none;
+  }
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px 48px;
+
+  color: $color-text;
+
+  &__wrap-title {
+    display: flex;
+    margin-bottom: 36px;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+    margin-right: 20px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 110%;
+    letter-spacing: -0.5px;
+  }
+
+  &__btn {
+    &--closed {
+      padding: 0;
+      width: 16px;
+      height: 16px;
+
+      background-color: transparent;
+      border: none;
+      background-image: url(../../../public/img/icon-closed.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      cursor: pointer;
+      transition: transform 200ms ease-out 100ms;
+
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__label {
+    margin: 0;
+    margin-bottom: 8px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 100%;
+
+    color: $color-text;
+  }
+
+  &__input {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 366px;
+    // height: 48px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-text;
+
+    &--password {
+      padding-right: 50px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__wrap-password {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  &__wrap-password-checkbox {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 14px;
+
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      
+      background-image: url("../../../public/img/icon-eye.svg");
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      cursor: pointer;
+    }
+  }
+
+  &__password-checkbox {
+    display: none;
+  }
+}
