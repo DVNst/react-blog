@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import About from "./components/about/about";
 import Blog from "./components/blog/blog";
 import EditPost from "./components/edit-post/edit-post";
@@ -9,17 +11,24 @@ import Post from "./components/post/post";
 import Profile from "./components/profile/profile";
 
 function App() {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  const onClickMenuOpen = () => {
+    setIsOpenMenu((prev) => !prev);
+  }
+
   return (
-    <div className="main main--two-columns">
-    {/* <div className="main"> */}
-      <Menu 
-        menuOpen
+    <div className={`main main--two-columns${isOpenMenu ? ' main--open-menu' : ''}`}>
+      {/* <div className="main"> */}
+      <Menu
+        isOpenMenu={isOpenMenu}
+        onClickMenu={onClickMenuOpen}
       />
       <div className="main__left">
         {/* <About />
         <EditPost />
         <PostLoad /> */}
-        <Post/>
+        <Post />
       </div>
       <div className="main__right">
         <Header />
@@ -30,7 +39,7 @@ function App() {
         <Profile />
       </div> */}
       {/* <Modal /> */}
-    </div>
+    </div >
   );
 }
 
