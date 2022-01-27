@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import { useSelector, useDispatch } from "react-redux";
+import { ActionCreator } from "./redux/actions";
+
 import About from "./components/about/about";
 import Blog from "./components/blog/blog";
 import EditPost from "./components/edit-post/edit-post";
@@ -25,10 +28,10 @@ function App() {
         onClickMenu={onClickMenuOpen}
       />
       <div className="main__left">
-        {/* <About />
-        <EditPost />
-        <PostLoad /> */}
-        <Post />
+        <About />
+        {/* <EditPost />
+        <PostLoad />
+        <Post /> */}
       </div>
       <div className="main__right">
         <Header />
