@@ -17,7 +17,7 @@ const About = () => {
         />
       </div>
       <h3 className="about__title">Обо мне</h3>
-      <p className="about__desc">
+      <p className="about__text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
         scelerisque diam arcu risus. Imperdiet dolor, porttitor pellentesque
         fringilla aliquet sit. Turpis arcu vitae quis nunc suscipit. Mattis

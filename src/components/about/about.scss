@@ -5,8 +5,51 @@
   // position: sticky;
   // top: 60px;
 
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+
+  &__header {
+    margin: 0;
+    margin-bottom: 35px;
+    padding: 0;
+  }
+
+  &__name {
+    margin: 0;
+    padding: 0;
+
+    font-weight: 800;
+    font-size: 72px;
+  }
+
+  &__desc {
+    margin: 10px 0 25px;
+    padding: 0;
+    display: block;
+    font-weight: 500;
+    font-size: 34px;
+
+    color: $color-text-minor;
+  }
+
   &__img {
     width: 100%;
     height: auto;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  &__text {
+    font: inherit;
   }
 }
