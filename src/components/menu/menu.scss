@@ -28,6 +28,7 @@
 
     & .menu {
       &__wrap-nav {
+        height: auto;
         opacity: 1;
       }
 
@@ -72,8 +73,9 @@
   }
 
   &__wrap-nav {
-    opacity: 0;
     margin: 0;
+    height: 0;
+    opacity: 0;
   }
 
   &__header {

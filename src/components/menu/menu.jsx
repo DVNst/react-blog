@@ -42,7 +42,7 @@ const Menu = ({ isOpenMenu, onClickMenu }) => {
           className="menu__btn"
           onClick={handleMenuOpen}
         >
-          <span className="menu__btn-text">Меню</span>
+          <span className="menu__btn-text"><span className="visually-hidden">{isOpenMenu ? 'закрыть ' : 'открыть '}</span>Меню</span>
         </button>
       </div>
     </div>
