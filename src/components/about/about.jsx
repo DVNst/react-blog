@@ -5,7 +5,7 @@ const About = () => {
     <section className="about">
       <div className="about__header">
         <h2 className="about__name">
-          Vasya Pupkin
+          <span className="about__nickname">Vasya Pupkin</span>
           <span className="about__desc">Блог фронтенд-разработчика</span>
         </h2>
         <img
